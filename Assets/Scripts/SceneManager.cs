@@ -6,8 +6,6 @@ using TMPro;
 public class SceneManager : MonoBehaviour
 {
     private Vector2 movement;
-    private Vector2 movementBackground;
-    private Vector2 movementBackgroundFar;
 
     // the player
     [SerializeField]
@@ -18,6 +16,8 @@ public class SceneManager : MonoBehaviour
     GameObject[] Background;
     [SerializeField]
     GameObject[] BackgroundFar;
+    [SerializeField]
+    GameObject[] BackgroundIntro;
 
     // shape fields
     [SerializeField]
@@ -66,10 +66,10 @@ public class SceneManager : MonoBehaviour
 
 #if UNITY_IPHONE || UNITY_ANDROID
         HUDStart.GetComponent<TextMeshPro>().text = "Tap to Start";
-        HUDHowToPlay.GetComponent<TextMeshPro>().text = "Tap to change shape\nMatch shape when passing moving field\nAct fast or lose";
+        HUDHowToPlay.GetComponent<TextMeshPro>().text = "Tap to change shape\nMatch shape when passing moving field\nAct FAST or LOSE!";
 #else
         HUDStart.GetComponent<TextMeshPro>().text = "Space to Start";
-        HUDHowToPlay.GetComponent<TextMeshPro>().text = "Space to change shape\nMatch shape when passing moving field\nAct fast or lose";
+        HUDHowToPlay.GetComponent<TextMeshPro>().text = "Space to change shape\nMatch shape when passing moving field\nAct FAST or LOSE!";
 
 #endif
     }
@@ -114,6 +114,13 @@ public class SceneManager : MonoBehaviour
                 BackgroundFar[i].GetComponent<Rigidbody2D>().velocity = backgroundFarMovement;
             }
         }
+        else if (Globals.CurrentGameState == Globals.GameState.TitleScreen)
+        {
+            for (int i = 0; i < BackgroundIntro.Length; i++)
+            {
+                BackgroundIntro[i].GetComponent<Rigidbody2D>().velocity = new Vector2(-2f, 0);
+            }
+        }
     }
 
     void UpdateTitleScreenState()
@@ -123,6 +130,19 @@ public class SceneManager : MonoBehaviour
             audioSource.PlayOneShot(BlipSound, 1f);
             StartGame();
             Globals.CurrentGameState = Globals.GameState.Playing;
+        }
+
+        float backgroundMinX = -15f;
+        for (int i = 0; i < BackgroundIntro.Length; i++)
+        {
+            if (BackgroundIntro[i].transform.localPosition.x < backgroundMinX)
+            {
+                int abutIndex = i == 0 ? BackgroundIntro.Length - 1 : i - 1;
+                BackgroundIntro[i].transform.localPosition = new Vector2(
+                        BackgroundIntro[abutIndex].transform.localPosition.x + BackgroundIntro[abutIndex].GetComponent<Renderer>().bounds.size.x,
+                        BackgroundIntro[i].transform.localPosition.y
+                    );
+            }
         }
     }
 
@@ -266,6 +286,11 @@ public class SceneManager : MonoBehaviour
         {
             BackgroundFar[i].SetActive(true);
         }
+        for (int i = 0; i < BackgroundIntro.Length; i++)
+        {
+            BackgroundIntro[i].SetActive(false);
+        }
+        Player.SetActive(true);
     }
 
 	void ResetPositions()
