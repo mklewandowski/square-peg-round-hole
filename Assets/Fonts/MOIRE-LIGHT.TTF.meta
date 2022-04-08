@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 5749166e3346406468e53e6f99315bb5
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Moire
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: b286d3ffe9153514b80fec5be40611c4, type: 3}
+  - {fileID: 12800000, guid: b2ba81a92f888a04799d138635f9b378, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
