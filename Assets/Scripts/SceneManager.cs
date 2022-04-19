@@ -39,7 +39,7 @@ public class SceneManager : MonoBehaviour
     [SerializeField]
     GameObject HUDScoreContainer;
 
-    float fieldTimer = .5f;
+    float fieldTimer = .1f;
     float fieldTimerMin = 3f;
     float fieldTimerMax = 5f;
 	float dyingTimer = 0;
@@ -166,7 +166,7 @@ public class SceneManager : MonoBehaviour
         }
         HUDScore.GetComponent<TextMeshPro>().text = "Score: " + Globals.CurrentScore.ToString();
 
-        float backgroundMinX = -15f;
+        float backgroundMinX = -20f;
         for (int i = 0; i < Background.Length; i++)
         {
             if (Background[i].transform.localPosition.x < backgroundMinX)
@@ -267,7 +267,7 @@ public class SceneManager : MonoBehaviour
 
     void StartGame()
     {
-        fieldTimer = .5f;
+        fieldTimer = .1f;
         fieldTimerMin = 3f;
         fieldTimerMax = 5f;
         Globals.ScrollSpeed = new Vector2(4f, 0);
