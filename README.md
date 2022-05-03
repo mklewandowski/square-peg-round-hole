@@ -4,6 +4,8 @@ Ages and ages ago, a friend of mine did a series of paintings of fictional 1980s
 ## Gameplay
 Square Peg, Round Hole is a simple shape matching micro-game. Switch between a square, circle, or triangle to match the theme of the scrolling shape fields that move increasingly faster and faster as the game progresses. 
 
+![Square Peg, Round Hole gameplay](https://github.com/mklewandowski/square-peg-round-hole/blob/main/Assets/Images/square-peg-gameplay.gif?raw=true)
+
 ## Supported Platforms
 Square Peg, Round Hole is designed for use on multiple platforms including:
 - iOS
@@ -14,12 +16,17 @@ Square Peg, Round Hole is designed for use on multiple platforms including:
 ## Running locally
 Use the following steps to run locally:
 1. Clone this repo
-2. Open repo folder using Unity 2020.3.10f.1
+2. Open repo folder using Unity 2021.3.0f.1
 3. Install Text Mesh Pro
 
 ## Development Tools
-- Created using Unity 2020.3.10f.1
+- Created using Unity 2021.3.0f.1
 - Code edited using Visual Studio Code
 - Sounds created using [Bfxr](https://www.bfxr.net/)
 - Audio edited using [Audacity](https://www.audacityteam.org/)
 - Found images edited and new images created using [Paint.NET](https://www.getpaint.net/)
+
+## Square Peg, Round Hole Cabinet Art
+The cabinet art painting that inspired this game was created by Tim Olson.
+
+![Square Peg, Round Hole cabinet art painting](https://github.com/mklewandowski/square-peg-round-hole/blob/main/Assets/Images/squarepeg.jpg?raw=true)

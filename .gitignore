@@ -62,7 +62,9 @@ crashlytics-build.properties
 
 # VS config file
 .vsconfig
-.vscode/
+
+# VS Code settings file
+/.vscode
 
 # Colorful plugin
 /[Aa]ssets/Colorful/
@@ -71,3 +73,6 @@ crashlytics-build.properties
 # TMPro plugin
 /[Aa]ssets/TextMesh Pro/
 /[Aa]ssets/TextMesh Pro.meta
+
+# Mac
+.DS_Store
