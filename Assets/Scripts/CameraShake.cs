@@ -17,7 +17,7 @@ public class CameraShake : MonoBehaviour
     {
         Vector3 newPos;
         newPos = startPosition;
-        if(shakeTimer > 0)
+        if (shakeTimer > 0)
         {
             shakeTimer = shakeTimer - Time.deltaTime;
             newPos.x =  newPos.x + Random.Range(shakeTimer * -.20f, shakeTimer * .20f);
@@ -28,7 +28,6 @@ public class CameraShake : MonoBehaviour
 
     public void StartShake()
     {
-        startPosition = transform.position;
         shakeTimer = shakeTimerMax;
     }
 }
